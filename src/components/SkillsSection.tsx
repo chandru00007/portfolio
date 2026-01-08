@@ -12,38 +12,66 @@ import {
 const skills = [
   {
     title: "Web Development",
-    description: "HTML, CSS, JavaScript, React",
     icon: Code,
+    color: "from-blue-500 to-cyan-400",
+    hoverBg: "hover:bg-blue-500/10",
+    hoverBorder: "hover:border-blue-400/50",
+    hoverShadow: "hover:shadow-[0_0_20px_-5px_rgb(59,130,246,0.4)]",
+    iconColor: "group-hover:text-blue-400",
   },
   {
     title: "Python Basics",
-    description: "Learning for AI & Web Development",
     icon: Terminal,
+    color: "from-yellow-400 to-green-500",
+    hoverBg: "hover:bg-yellow-500/10",
+    hoverBorder: "hover:border-yellow-400/50",
+    hoverShadow: "hover:shadow-[0_0_20px_-5px_rgb(234,179,8,0.4)]",
+    iconColor: "group-hover:text-yellow-400",
   },
   {
     title: "C/C++",
-    description: "Data Structures & Algorithms",
     icon: Cpu,
+    color: "from-blue-600 to-indigo-500",
+    hoverBg: "hover:bg-indigo-500/10",
+    hoverBorder: "hover:border-indigo-400/50",
+    hoverShadow: "hover:shadow-[0_0_20px_-5px_rgb(99,102,241,0.4)]",
+    iconColor: "group-hover:text-indigo-400",
   },
   {
     title: "Database",
-    description: "SQL, Basic Database Concepts",
     icon: Database,
+    color: "from-emerald-500 to-teal-400",
+    hoverBg: "hover:bg-emerald-500/10",
+    hoverBorder: "hover:border-emerald-400/50",
+    hoverShadow: "hover:shadow-[0_0_20px_-5px_rgb(16,185,129,0.4)]",
+    iconColor: "group-hover:text-emerald-400",
   },
   {
     title: "AI Tools",
-    description: "Prompt Engineering, AI Integration",
     icon: Sparkles,
+    color: "from-purple-500 to-pink-500",
+    hoverBg: "hover:bg-purple-500/10",
+    hoverBorder: "hover:border-purple-400/50",
+    hoverShadow: "hover:shadow-[0_0_20px_-5px_rgb(168,85,247,0.4)]",
+    iconColor: "group-hover:text-purple-400",
   },
   {
     title: "Prompt Engineering",
-    description: "Neural Networks Basics",
     icon: Brain,
+    color: "from-violet-500 to-fuchsia-500",
+    hoverBg: "hover:bg-violet-500/10",
+    hoverBorder: "hover:border-violet-400/50",
+    hoverShadow: "hover:shadow-[0_0_20px_-5px_rgb(139,92,246,0.4)]",
+    iconColor: "group-hover:text-violet-400",
   },
   {
     title: "Soft Skills",
-    description: "Communication, Teamwork",
     icon: MessageSquare,
+    color: "from-orange-500 to-amber-400",
+    hoverBg: "hover:bg-orange-500/10",
+    hoverBorder: "hover:border-orange-400/50",
+    hoverShadow: "hover:shadow-[0_0_20px_-5px_rgb(249,115,22,0.4)]",
+    iconColor: "group-hover:text-orange-400",
   },
 ];
 
@@ -103,18 +131,17 @@ const SkillsSection = () => {
               whileHover={{ 
                 y: -8, 
                 scale: 1.1,
-                boxShadow: "0 15px 30px -10px hsl(var(--primary) / 0.3)"
               }}
-              className="group p-4 rounded-xl bg-card/50 border border-border hover:border-primary/50 hover:bg-primary/5 cursor-pointer transition-all duration-300 flex flex-col items-center text-center hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.3)]"
+              className={`group p-4 rounded-xl bg-card/50 border border-border ${skill.hoverBorder} ${skill.hoverBg} cursor-pointer transition-all duration-300 flex flex-col items-center text-center ${skill.hoverShadow}`}
             >
               <motion.div 
-                className="p-3 rounded-lg bg-secondary group-hover:bg-primary/20 transition-colors mb-2"
+                className={`p-3 rounded-lg bg-gradient-to-br ${skill.color} opacity-80 group-hover:opacity-100 transition-all mb-2`}
                 whileHover={{ rotate: [0, -10, 10, -5, 0] }}
                 transition={{ duration: 0.5 }}
               >
-                <skill.icon className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                <skill.icon className="h-5 w-5 text-white transition-colors" />
               </motion.div>
-              <h3 className="text-sm font-medium group-hover:text-primary transition-colors">
+              <h3 className={`text-sm font-medium ${skill.iconColor} transition-colors`}>
                 {skill.title}
               </h3>
             </motion.div>
