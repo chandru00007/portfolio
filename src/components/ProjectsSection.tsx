@@ -73,9 +73,9 @@ const ProjectsSection = () => {
                 stiffness: 100
               }}
               viewport={{ once: true }}
-              className={`group p-6 rounded-2xl border cursor-pointer transition-all duration-300 ${
+              className={`group relative p-6 rounded-2xl border cursor-pointer transition-all duration-300 ${
                 project.highlight 
-                  ? "bg-gradient-to-br from-card to-card/80 border-primary/30 shadow-lg shadow-primary/5" 
+                  ? "bg-gradient-to-br from-card to-card/80 border-primary/30 shadow-lg shadow-primary/5 hover:border-primary hover:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.4)]" 
                   : "bg-card/50 border-border hover:border-primary/50"
               }`}
             >
