@@ -11,7 +11,7 @@ const HoverText = ({ text, className }: { text: string; className?: string }) =>
       {text.split("").map((letter, index) => (
         <span
           key={index}
-          className="inline-block transition-colors duration-150 hover:text-primary cursor-default"
+          className="inline-block transition-all duration-150 cursor-default hover:text-primary hover:[-webkit-text-fill-color:hsl(48_96%_53%)] hover:drop-shadow-[0_0_8px_hsl(48_96%_53%/0.8)]"
           style={{ transitionDelay: `${index * 10}ms` }}
         >
           {letter}
@@ -52,9 +52,9 @@ const HeroSection = () => {
           left: mousePosition.x,
           top: mousePosition.y,
           transform: "translate(-50%, -50%)",
-          width: "400px",
-          height: "400px",
-          background: "radial-gradient(circle, hsl(48 96% 53% / 0.15) 0%, hsl(48 96% 53% / 0.05) 30%, transparent 70%)",
+          width: "500px",
+          height: "500px",
+          background: "radial-gradient(circle, hsl(48 96% 53% / 0.25) 0%, hsl(48 96% 53% / 0.1) 35%, transparent 70%)",
           opacity: isHovering ? 1 : 0,
           borderRadius: "50%",
         }}
