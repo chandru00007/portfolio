@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Download, MapPin, Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import aboutPhoto from "@/assets/about-photo.jpg";
+import aboutPhoto from "@/assets/about-photo.png";
 
 const AboutSection = () => {
   return (
