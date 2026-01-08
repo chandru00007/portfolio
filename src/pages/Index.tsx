@@ -3,9 +3,9 @@ import HeroSection from "@/components/HeroSection";
 import TechMarquee from "@/components/TechMarquee";
 import AboutSection from "@/components/AboutSection";
 import EducationTimeline from "@/components/EducationTimeline";
-import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
-import CurrentlyLearning from "@/components/CurrentlyLearning";
+import SkillsSection from "@/components/SkillsSection";
+import CertificationsSection from "@/components/CertificationsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -17,9 +17,9 @@ const Index = () => {
       <TechMarquee />
       <AboutSection />
       <EducationTimeline />
-      <SkillsSection />
       <ProjectsSection />
-      <CurrentlyLearning />
+      <SkillsSection />
+      <CertificationsSection />
       <ContactSection />
       <Footer />
     </div>
