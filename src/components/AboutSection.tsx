@@ -33,7 +33,7 @@ const AboutSection = () => {
               <img 
                 src={aboutPhoto} 
                 alt="Chandrashekhar Kawadimatti" 
-                className="w-full h-full object-cover object-center rounded-3xl"
+                className="w-full h-full object-contain object-center rounded-3xl"
               />
             </div>
           </motion.div>
