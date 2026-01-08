@@ -71,10 +71,7 @@ const EducationTimeline = () => {
                     }`} />
                   </div>
                   <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-sm text-muted-foreground">{item.year}</span>
-                      <span className="text-sm text-primary font-medium">{item.score}</span>
-                    </div>
+                    <span className="text-sm text-muted-foreground mb-1 block">{item.year}</span>
                     <h3 className="text-lg font-semibold">{item.title}</h3>
                     <p className="text-muted-foreground">{item.institution}</p>
                   </div>
