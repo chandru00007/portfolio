@@ -37,7 +37,7 @@ const skills = [
     icon: Sparkles,
   },
   {
-    title: "Deep Learning",
+    title: "Prompt Engineering",
     description: "Neural Networks Basics",
     icon: Brain,
   },
