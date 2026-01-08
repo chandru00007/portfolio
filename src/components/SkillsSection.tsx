@@ -17,7 +17,7 @@ const skills = [
     icon: Code,
   },
   {
-    title: "Python",
+    title: "Python Basics",
     description: "Learning for AI & Web Development",
     icon: Terminal,
   },
