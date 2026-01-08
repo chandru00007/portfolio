@@ -136,21 +136,21 @@ const ContactSection = () => {
               <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
               
               <a
-                href="mailto:your@email.com"
+                href="mailto:chandrukavadimatti07@gmail.com"
                 className="flex items-center justify-between p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors duration-200 group mb-3"
               >
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-primary" />
                   <div>
                     <p className="text-sm text-muted-foreground">Email Me</p>
-                    <p className="font-medium">your@email.com</p>
+                    <p className="font-medium">chandrukavadimatti07@gmail.com</p>
                   </div>
                 </div>
                 <ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
               </a>
 
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/chandrashekhar-kawadimatti-b086b3385/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-between p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors duration-200 group"
@@ -159,7 +159,7 @@ const ContactSection = () => {
                   <Linkedin className="h-5 w-5 text-primary" />
                   <div>
                     <p className="text-sm text-muted-foreground">LinkedIn</p>
-                    <p className="font-medium">Connect Profile</p>
+                    <p className="font-medium">Chandrashekhar Kawadimatti</p>
                   </div>
                 </div>
                 <ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
@@ -170,26 +170,26 @@ const ContactSection = () => {
               <h3 className="text-lg font-semibold mb-4">Socials</h3>
               <div className="flex gap-4">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/chandru00007"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors duration-200"
+                  className="p-3 rounded-xl bg-secondary/50 hover:bg-secondary hover:text-primary transition-colors duration-200"
                 >
                   <Github className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/_chandru.hk/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors duration-200"
+                  className="p-3 rounded-xl bg-secondary/50 hover:bg-secondary hover:text-primary transition-colors duration-200"
                 >
                   <Instagram className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/chandrashekhar-kawadimatti-b086b3385/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors duration-200"
+                  className="p-3 rounded-xl bg-secondary/50 hover:bg-secondary hover:text-primary transition-colors duration-200"
                 >
                   <Linkedin className="h-5 w-5" />
                 </a>
