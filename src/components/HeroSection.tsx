@@ -1,4 +1,4 @@
-import { ArrowRight, Linkedin, Github, Mail } from "lucide-react";
+import { ArrowRight, Linkedin, Github, Mail, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useState, useRef } from "react";
@@ -173,6 +173,7 @@ const HeroSection = () => {
             {[
               { href: "https://www.linkedin.com/in/chandrashekhar-kawadimatti-b086b3385/", Icon: Linkedin },
               { href: "https://github.com/chandru00007", Icon: Github },
+              { href: "https://www.instagram.com/_chandru.hk/", Icon: Instagram },
               { href: "mailto:chandrukavadimatti07@gmail.com", Icon: Mail },
             ].map((social, index) => (
               <motion.a
