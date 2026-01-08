@@ -5,34 +5,37 @@ import { Button } from "@/components/ui/button";
 
 const projects = [
   {
-    title: "Hackathon Project",
+    title: "LifeConnect",
     description:
-      "A prototype built during a hackathon. Solved a real-world problem using AI and web technologies. Showcases problem-solving under pressure.",
-    tech: ["React", "Python", "AI"],
+      "A platform that makes organ donation easier and speeds up the process using AI algorithms. Connects donors, hospitals, and recipients seamlessly.",
+    tech: ["React", "Python", "AI", "Healthcare"],
     type: "live",
+    event: "Prompt to Product Hackathon",
     github: "https://github.com",
     live: "https://example.com",
     highlight: true,
   },
   {
-    title: "Learning Project",
+    title: "ClinicBook",
     description:
-      "A practice project to understand React fundamentals. Built a functional application with modern web technologies.",
+      "A platform to book appointments for local clinics in your locality — just like ordering food or booking movie tickets. Simple, fast, convenient.",
     tech: ["React", "JavaScript", "Tailwind"],
     type: "live",
+    event: null,
     github: "https://github.com",
     live: null,
     highlight: false,
   },
   {
-    title: "Coming Soon",
+    title: "Vyavsta AI",
     description:
-      "More exciting projects are in the works! Stay tuned for updates as I continue building and learning new technologies.",
-    tech: ["Next.js", "AI", "More..."],
-    type: "upcoming",
-    github: null,
+      "An AI financial manager for small retail owners. Analyzes daily business operations, provides health stats, and advises on areas to improve.",
+    tech: ["AI", "Analytics", "Finance"],
+    type: "live",
+    event: "Bengaluru AI Hack Day",
+    github: "https://github.com",
     live: null,
-    highlight: false,
+    highlight: true,
   },
 ];
 
@@ -67,21 +70,16 @@ const ProjectsSection = () => {
               }`}
             >
               {/* Type Badge */}
-              <div className="mb-4">
-                {project.type === "live" && (
-                  <Badge className="bg-green-500/10 text-green-400 border-green-500/20 rounded-full">
-                    <Sparkles className="h-3 w-3 mr-1" />
-                    Live
-                  </Badge>
-                )}
-                {project.type === "upcoming" && (
-                  <Badge variant="outline" className="rounded-full">
-                    🚀 Coming Soon
-                  </Badge>
-                )}
-                {project.highlight && (
-                  <Badge className="ml-2 bg-primary/10 text-primary border-primary/20 rounded-full">
+              <div className="mb-4 flex flex-wrap gap-2">
+                {project.event && (
+                  <Badge className="bg-accent/50 text-accent-foreground border-accent rounded-full">
                     <Trophy className="h-3 w-3 mr-1" />
+                    {project.event}
+                  </Badge>
+                )}
+                {project.highlight && !project.event && (
+                  <Badge className="bg-primary/10 text-primary border-primary/20 rounded-full">
+                    <Sparkles className="h-3 w-3 mr-1" />
                     Featured
                   </Badge>
                 )}
