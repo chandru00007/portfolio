@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Download, MapPin, Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import aboutPhoto from "@/assets/about-photo.png";
+import aboutPhoto from "@/assets/about-photo-expanded.png";
 
 const AboutSection = () => {
   return (
@@ -29,11 +29,11 @@ const AboutSection = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="aspect-[9/16] max-w-sm mx-auto rounded-3xl flex items-center justify-center overflow-hidden shadow-[0_0_40px_rgba(234,179,8,0.15)] hover:shadow-[0_0_60px_rgba(234,179,8,0.25)] transition-shadow duration-500">
+            <div className="aspect-[3/4] max-w-md mx-auto rounded-3xl flex items-center justify-center overflow-hidden shadow-[0_0_40px_rgba(234,179,8,0.15)] hover:shadow-[0_0_60px_rgba(234,179,8,0.25)] transition-shadow duration-500">
               <img 
                 src={aboutPhoto} 
                 alt="Chandrashekhar Kawadimatti" 
-                className="w-full h-full object-contain object-center rounded-3xl"
+                className="w-full h-full object-cover object-center rounded-3xl"
               />
             </div>
           </motion.div>
