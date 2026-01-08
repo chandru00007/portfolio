@@ -9,6 +9,7 @@ import SkillsSection from "@/components/SkillsSection";
 import CertificationsSection from "@/components/CertificationsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import ChatBot from "@/components/ChatBot";
 
 const Index = () => {
   return (
@@ -43,6 +44,7 @@ const Index = () => {
         <CertificationsSection />
         <ContactSection />
         <Footer />
+        <ChatBot />
       </div>
     </div>
   );
