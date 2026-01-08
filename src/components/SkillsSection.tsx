@@ -79,16 +79,13 @@ const SkillsSection = () => {
               viewport={{ once: true }}
               className="group p-5 rounded-xl bg-card/50 border border-border hover:border-primary/50 transition-all duration-300"
             >
-              <div className="flex items-start gap-4">
+              <div className="flex items-center gap-4">
                 <div className="p-2 rounded-lg bg-secondary group-hover:bg-primary/10 transition-colors">
                   <skill.icon className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
                 </div>
-                <div>
-                  <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors">
-                    {skill.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">{skill.description}</p>
-                </div>
+                <h3 className="font-semibold group-hover:text-primary transition-colors">
+                  {skill.title}
+                </h3>
               </div>
             </motion.div>
           ))}
