@@ -1,29 +1,28 @@
+import { motion } from "framer-motion";
+
 const technologies = [
-  { name: "Python", icon: "🐍" },
-  { name: "React", icon: "⚛️" },
-  { name: "JavaScript", icon: "📜" },
-  { name: "HTML5", icon: "🌐" },
-  { name: "CSS3", icon: "🎨" },
-  { name: "C++", icon: "⚙️" },
-  { name: "AI Tools", icon: "🤖" },
-  { name: "Git", icon: "📦" },
-  { name: "VS Code", icon: "💻" },
-  { name: "Prompt Engineering", icon: "✨" },
+  "React", "JavaScript", "Python", "HTML5", "CSS3", "C++", 
+  "Git", "VS Code", "AI Tools", "Tailwind", "Node.js", "SQL"
 ];
 
 const TechMarquee = () => {
   return (
-    <section className="py-8 bg-secondary/30 border-y border-border overflow-hidden">
-      <div className="flex animate-marquee">
+    <div className="py-6 border-y border-border/50 overflow-hidden bg-secondary/20">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 1 }}
+        className="flex animate-marquee"
+      >
         {/* First set */}
         {technologies.map((tech, index) => (
           <div
             key={`first-${index}`}
-            className="flex items-center gap-2 px-8 py-2 shrink-0"
+            className="flex items-center gap-3 px-8 shrink-0"
           >
-            <span className="text-2xl">{tech.icon}</span>
-            <span className="text-lg font-medium text-muted-foreground whitespace-nowrap">
-              {tech.name}
+            <span className="w-2 h-2 rounded-full bg-primary" />
+            <span className="text-sm font-medium text-muted-foreground whitespace-nowrap">
+              {tech}
             </span>
           </div>
         ))}
@@ -31,16 +30,16 @@ const TechMarquee = () => {
         {technologies.map((tech, index) => (
           <div
             key={`second-${index}`}
-            className="flex items-center gap-2 px-8 py-2 shrink-0"
+            className="flex items-center gap-3 px-8 shrink-0"
           >
-            <span className="text-2xl">{tech.icon}</span>
-            <span className="text-lg font-medium text-muted-foreground whitespace-nowrap">
-              {tech.name}
+            <span className="w-2 h-2 rounded-full bg-primary" />
+            <span className="text-sm font-medium text-muted-foreground whitespace-nowrap">
+              {tech}
             </span>
           </div>
         ))}
-      </div>
-    </section>
+      </motion.div>
+    </div>
   );
 };
 

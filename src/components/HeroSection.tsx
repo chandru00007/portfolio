@@ -1,85 +1,90 @@
-import { ArrowDown, Github, Linkedin, Instagram, Mail } from "lucide-react";
+import { ArrowRight, Linkedin, Github, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative pt-16"
+      className="min-h-screen flex items-center justify-center relative noise-bg overflow-hidden"
     >
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/20" />
+      {/* Background Image Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background z-[1]" />
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="text-center max-w-4xl mx-auto">
-          {/* Greeting */}
-          <p className="text-primary font-medium mb-4 animate-fade-in">
-            Hello, I'm
-          </p>
+        <div className="text-center max-w-5xl mx-auto pt-20">
+          {/* Name - Large Typography */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mb-4"
+          >
+            <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight leading-none">
+              <span className="text-gradient">YOUR NAME</span>
+            </h1>
+            <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight leading-none text-outline">
+              LASTNAME
+            </h1>
+          </motion.div>
           
-          {/* Name */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
-            <span className="text-foreground">Your Name</span>
-          </h1>
-          
-          {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-4 animate-fade-in">
-            First-Year CSE Student | Exploring AI & Web Development
-          </p>
-          
-          {/* Personal Quote */}
-          <p className="text-lg text-muted-foreground/80 italic mb-8 animate-fade-in">
-            "Building my future, one line of code at a time."
-          </p>
+          {/* Tagline */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-primary font-mono text-lg md:text-xl mb-8"
+          >
+            First-Year CSE Student 🎓
+          </motion.p>
           
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in">
-            <Button size="lg" asChild>
-              <a href="#projects">View My Work</a>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+          >
+            <Button size="lg" className="rounded-full px-8 gap-2 bg-primary text-primary-foreground hover:bg-primary/90">
+              <a href="#projects" className="flex items-center gap-2">
+                View Work <ArrowRight className="h-4 w-4" />
+              </a>
             </Button>
-            <Button size="lg" variant="outline" asChild>
-              <a href="#contact">Get In Touch</a>
+            <Button size="lg" variant="outline" className="rounded-full px-8" asChild>
+              <a href="#contact">Contact Me</a>
             </Button>
-          </div>
+          </motion.div>
           
           {/* Social Icons */}
-          <div className="flex gap-6 justify-center animate-fade-in">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="flex gap-6 justify-center"
+          >
             <a
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
+              className="text-muted-foreground hover:text-foreground transition-colors duration-200"
             >
-              <Linkedin className="h-6 w-6" />
+              <Linkedin className="h-5 w-5" />
             </a>
             <a
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
+              className="text-muted-foreground hover:text-foreground transition-colors duration-200"
             >
-              <Github className="h-6 w-6" />
-            </a>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
-              <Instagram className="h-6 w-6" />
+              <Github className="h-5 w-5" />
             </a>
             <a
               href="mailto:your@email.com"
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
+              className="text-muted-foreground hover:text-foreground transition-colors duration-200"
             >
-              <Mail className="h-6 w-6" />
+              <Mail className="h-5 w-5" />
             </a>
-          </div>
-        </div>
-        
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <ArrowDown className="h-6 w-6 text-muted-foreground" />
+          </motion.div>
         </div>
       </div>
     </section>

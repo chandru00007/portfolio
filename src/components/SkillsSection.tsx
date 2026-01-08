@@ -1,70 +1,109 @@
-import { Progress } from "@/components/ui/progress";
+import { motion } from "framer-motion";
+import { 
+  Code, 
+  Terminal, 
+  Database, 
+  Cpu, 
+  Sparkles, 
+  Brain,
+  Monitor,
+  MessageSquare
+} from "lucide-react";
 
-const skillCategories = [
+const skills = [
   {
-    title: "Currently Learning",
-    skills: [
-      { name: "Python", level: 40 },
-      { name: "React", level: 30 },
-      { name: "Prompt Engineering", level: 50 },
-    ],
+    title: "Web Development",
+    description: "HTML, CSS, JavaScript, React",
+    icon: Code,
   },
   {
-    title: "Basics",
-    skills: [
-      { name: "HTML/CSS", level: 60 },
-      { name: "JavaScript", level: 35 },
-      { name: "C/C++", level: 45 },
-    ],
+    title: "Python",
+    description: "Learning for AI & Web Development",
+    icon: Terminal,
   },
   {
-    title: "Exploring",
-    skills: [
-      { name: "AI Tools", level: 55 },
-      { name: "Vibe Coding", level: 40 },
-      { name: "Git & GitHub", level: 35 },
-    ],
+    title: "C/C++",
+    description: "Data Structures & Algorithms",
+    icon: Cpu,
+  },
+  {
+    title: "Database",
+    description: "SQL, Basic Database Concepts",
+    icon: Database,
+  },
+  {
+    title: "AI Tools",
+    description: "Prompt Engineering, AI Integration",
+    icon: Sparkles,
+  },
+  {
+    title: "Deep Learning",
+    description: "Neural Networks Basics",
+    icon: Brain,
+  },
+  {
+    title: "Operating Systems",
+    description: "Linux, Windows, OS Concepts",
+    icon: Monitor,
+  },
+  {
+    title: "Soft Skills",
+    description: "Communication, Teamwork",
+    icon: MessageSquare,
   },
 ];
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="py-20 bg-background">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Skills</h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-4" />
-          <p className="text-muted-foreground max-w-xl mx-auto">
-            I'm honest about where I am in my learning journey. These progress 
-            bars show my current comfort level with each technology.
-          </p>
-        </div>
+    <section id="skills" className="py-24 relative noise-bg">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-2">Technical Arsenal</h2>
+          <p className="text-muted-foreground">Tools and technologies I'm learning to build with.</p>
+        </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {skillCategories.map((category, categoryIndex) => (
-            <div
-              key={categoryIndex}
-              className="bg-card border border-border rounded-xl p-6"
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {skills.map((skill, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              viewport={{ once: true }}
+              className="group p-5 rounded-xl bg-card/50 border border-border hover:border-primary/50 transition-all duration-300"
             >
-              <h3 className="text-xl font-semibold mb-6 text-center">
-                {category.title}
-              </h3>
-              <div className="space-y-6">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex}>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-sm font-medium">{skill.name}</span>
-                      <span className="text-xs text-muted-foreground">
-                        {skill.level}%
-                      </span>
-                    </div>
-                    <Progress value={skill.level} className="h-2" />
-                  </div>
-                ))}
+              <div className="flex items-start gap-4">
+                <div className="p-2 rounded-lg bg-secondary group-hover:bg-primary/10 transition-colors">
+                  <skill.icon className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors">
+                    {skill.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">{skill.description}</p>
+                </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
+
+        {/* Learning More Quote */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="text-center text-muted-foreground italic mt-12"
+        >
+          "Learning & Earning More..."
+        </motion.p>
       </div>
     </section>
   );

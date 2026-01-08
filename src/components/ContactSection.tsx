@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Mail, Linkedin, Github, Instagram, Send } from "lucide-react";
+import { motion } from "framer-motion";
+import { Mail, Linkedin, Github, Instagram, Send, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -18,7 +19,6 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     toast({
@@ -40,25 +40,32 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-secondary/30">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-4" />
-          <p className="text-muted-foreground max-w-xl mx-auto">
-            Open to opportunities, collaborations, and learning together!
-          </p>
-        </div>
+    <section id="contact" className="py-24 relative noise-bg">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-2">Let's Connect</h2>
+          <p className="text-muted-foreground">Open for collaborations and new opportunities.</p>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Contact Form */}
-          <div className="bg-card border border-border rounded-xl p-6 md:p-8">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="p-8 rounded-2xl bg-card border border-border"
+          >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium mb-2"
-                >
+                <label htmlFor="name" className="block text-sm font-medium mb-2 text-muted-foreground">
                   Name
                 </label>
                 <Input
@@ -68,14 +75,12 @@ const ContactSection = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  className="rounded-xl bg-secondary border-border"
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium mb-2"
-                >
+                <label htmlFor="email" className="block text-sm font-medium mb-2 text-muted-foreground">
                   Email
                 </label>
                 <Input
@@ -86,89 +91,111 @@ const ContactSection = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
+                  className="rounded-xl bg-secondary border-border"
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium mb-2"
-                >
+                <label htmlFor="message" className="block text-sm font-medium mb-2 text-muted-foreground">
                   Message
                 </label>
                 <Textarea
                   id="message"
                   name="message"
                   placeholder="Your message..."
-                  rows={4}
+                  rows={5}
                   value={formData.message}
                   onChange={handleChange}
                   required
+                  className="rounded-xl bg-secondary border-border resize-none"
                 />
               </div>
 
-              <Button type="submit" className="w-full" disabled={isSubmitting}>
+              <Button type="submit" className="w-full rounded-xl gap-2" disabled={isSubmitting}>
                 {isSubmitting ? (
                   "Sending..."
                 ) : (
                   <>
-                    <Send className="h-4 w-4 mr-2" />
+                    <Send className="h-4 w-4" />
                     Send Message
                   </>
                 )}
               </Button>
             </form>
-          </div>
+          </motion.div>
 
-          {/* Direct Contact */}
-          <div className="flex flex-col justify-center">
-            <h3 className="text-xl font-semibold mb-6">Connect With Me</h3>
-            <p className="text-muted-foreground mb-8">
-              Feel free to reach out through the form or connect with me directly 
-              on social media. I'm always happy to chat about tech, projects, or 
-              potential collaborations!
-            </p>
-
-            <div className="space-y-4">
+          {/* Contact Info */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <div className="p-6 rounded-2xl bg-card border border-border">
+              <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
+              
               <a
                 href="mailto:your@email.com"
-                className="flex items-center gap-4 p-4 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors duration-200"
+                className="flex items-center justify-between p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors duration-200 group mb-3"
               >
-                <Mail className="h-5 w-5 text-primary" />
-                <span>your@email.com</span>
+                <div className="flex items-center gap-3">
+                  <Mail className="h-5 w-5 text-primary" />
+                  <div>
+                    <p className="text-sm text-muted-foreground">Email Me</p>
+                    <p className="font-medium">your@email.com</p>
+                  </div>
+                </div>
+                <ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
               </a>
 
               <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors duration-200"
+                className="flex items-center justify-between p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors duration-200 group"
               >
-                <Linkedin className="h-5 w-5 text-primary" />
-                <span>LinkedIn Profile</span>
-              </a>
-
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors duration-200"
-              >
-                <Github className="h-5 w-5 text-primary" />
-                <span>GitHub Profile</span>
-              </a>
-
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors duration-200"
-              >
-                <Instagram className="h-5 w-5 text-primary" />
-                <span>Instagram Profile</span>
+                <div className="flex items-center gap-3">
+                  <Linkedin className="h-5 w-5 text-primary" />
+                  <div>
+                    <p className="text-sm text-muted-foreground">LinkedIn</p>
+                    <p className="font-medium">Connect Profile</p>
+                  </div>
+                </div>
+                <ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
               </a>
             </div>
-          </div>
+
+            <div className="p-6 rounded-2xl bg-card border border-border">
+              <h3 className="text-lg font-semibold mb-4">Socials</h3>
+              <div className="flex gap-4">
+                <a
+                  href="https://github.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors duration-200"
+                >
+                  <Github className="h-5 w-5" />
+                </a>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors duration-200"
+                >
+                  <Instagram className="h-5 w-5" />
+                </a>
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors duration-200"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </a>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
