@@ -57,25 +57,28 @@ const CertificationsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`group relative p-6 rounded-2xl bg-gradient-to-br ${cert.color.gradient} border ${cert.color.border} transition-all duration-300 overflow-hidden`}
+              className={`group relative p-6 rounded-2xl bg-card/80 backdrop-blur-sm border ${cert.color.border} transition-all duration-300 overflow-hidden`}
             >
               {/* Glow background effect */}
-              <div className={`absolute inset-0 ${cert.color.glow} opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-500 -z-10`} />
+              <div className={`absolute -inset-4 ${cert.color.glow} opacity-0 group-hover:opacity-100 blur-3xl transition-opacity duration-500 pointer-events-none`} />
               
-              <div className="flex items-start justify-between mb-4">
+              {/* Gradient overlay */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${cert.color.gradient} pointer-events-none`} />
+              
+              <div className="relative z-10 flex items-start justify-between mb-4">
                 <div className={`p-2 rounded-lg ${cert.color.icon}`}>
                   <Award className="h-5 w-5" />
                 </div>
                 <span className={`text-sm font-medium ${cert.color.badge}`}>{cert.year}</span>
               </div>
 
-              <h3 className="text-lg font-semibold mb-1 group-hover:text-primary transition-colors">
+              <h3 className="relative z-10 text-lg font-semibold mb-1 group-hover:text-primary transition-colors">
                 {cert.title}
               </h3>
-              <p className="text-muted-foreground text-sm mb-3">{cert.issuer}</p>
-              <p className="text-muted-foreground text-sm mb-4">{cert.description}</p>
+              <p className="relative z-10 text-muted-foreground text-sm mb-3">{cert.issuer}</p>
+              <p className="relative z-10 text-muted-foreground text-sm mb-4">{cert.description}</p>
 
-              <Button variant="ghost" size="sm" className="rounded-full gap-2 p-0 h-auto text-muted-foreground hover:text-primary" asChild>
+              <Button variant="ghost" size="sm" className="relative z-10 rounded-full gap-2 p-0 h-auto text-muted-foreground hover:text-primary" asChild>
                 <a href={cert.link} target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="h-4 w-4" />
                   Verify Credential
