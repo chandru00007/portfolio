@@ -53,10 +53,17 @@ const CertificationsSection = () => {
           {certifications.map((cert, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ 
+                duration: 0.6, 
+                delay: index * 0.15,
+                type: "spring",
+                stiffness: 100,
+                damping: 15
+              }}
+              viewport={{ once: true, margin: "-50px" }}
+              whileHover={{ y: -5, transition: { duration: 0.2 } }}
               className={`group relative p-6 rounded-2xl bg-card/80 backdrop-blur-sm border ${cert.color.border} transition-all duration-300 overflow-hidden`}
             >
               {/* Glow background effect */}
