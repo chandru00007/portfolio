@@ -16,7 +16,7 @@ const projects = [
     highlight: true,
   },
   {
-    title: "ClinicBook",
+    title: "DocQue",
     description:
       "A platform to book appointments for local clinics in your locality — just like ordering food or booking movie tickets. Simple, fast, convenient.",
     tech: ["React", "JavaScript", "Tailwind"],
