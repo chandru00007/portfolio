@@ -63,24 +63,48 @@ const SkillsSection = () => {
           <p className="text-muted-foreground">Tools and skills I'm using now to build projects.</p>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 max-w-4xl mx-auto">
+        <motion.div 
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 max-w-4xl mx-auto"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.08,
+                delayChildren: 0.1
+              }
+            }
+          }}
+        >
           {skills.map((skill, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30, scale: 0.8 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              variants={{
+                hidden: { 
+                  opacity: 0, 
+                  y: 40, 
+                  scale: 0.8,
+                  rotateX: 45
+                },
+                visible: { 
+                  opacity: 1, 
+                  y: 0, 
+                  scale: 1,
+                  rotateX: 0,
+                  transition: {
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 12
+                  }
+                }
+              }}
               whileHover={{ 
                 y: -8, 
                 scale: 1.1,
                 boxShadow: "0 15px 30px -10px hsl(var(--primary) / 0.3)"
               }}
-              transition={{ 
-                duration: 0.4, 
-                delay: index * 0.05,
-                type: "spring",
-                stiffness: 150
-              }}
-              viewport={{ once: true }}
               className="group p-4 rounded-xl bg-card/50 border border-border hover:border-primary/50 hover:bg-primary/5 cursor-pointer transition-all duration-300 flex flex-col items-center text-center hover:shadow-[0_0_20px_-5px_hsl(var(--primary)/0.3)]"
             >
               <motion.div 
@@ -95,7 +119,7 @@ const SkillsSection = () => {
               </h3>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Learning More Quote */}
         <motion.p
