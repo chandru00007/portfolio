@@ -1,8 +1,49 @@
 import { ArrowRight, Linkedin, Github, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { useState, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
 import heroBg from "@/assets/hero-bg-wide.jpg";
+
+// Roles to cycle through
+const roles = [
+  "First-Year CST Student 🎓",
+  "Web Developer 💻",
+  "Tech Enthusiast 🚀",
+  "Problem Solver 🧩",
+  "Future Engineer ⚡",
+];
+
+// Component for animated role text
+const RoleAnimation = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % roles.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="h-8 md:h-10 overflow-hidden relative">
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={currentIndex}
+          initial={{ y: 40, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -40, opacity: 0 }}
+          transition={{ 
+            duration: 0.5, 
+            ease: "easeInOut"
+          }}
+          className="absolute inset-0 flex items-center justify-center text-primary font-mono text-lg md:text-xl"
+        >
+          {roles[currentIndex]}
+        </motion.span>
+      </AnimatePresence>
+    </div>
+  );
+};
 
 // Component to render text with hover effect on each letter
 const HoverText = ({ text, className }: { text: string; className?: string }) => {
@@ -101,8 +142,8 @@ const HeroSection = () => {
             </motion.h1>
           </motion.div>
 
-          {/* Tagline with bounce effect */}
-          <motion.p
+          {/* Animated Role Switcher */}
+          <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ 
@@ -112,10 +153,10 @@ const HeroSection = () => {
               stiffness: 200,
               damping: 10
             }}
-            className="text-primary font-mono text-lg md:text-xl mb-8"
+            className="mb-8"
           >
-            First-Year CST Student 🎓
-          </motion.p>
+            <RoleAnimation />
+          </motion.div>
 
           {/* CTA Buttons with staggered pop-up */}
           <motion.div
