@@ -70,80 +70,131 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-5xl mx-auto pt-20">
-          {/* Name - Large Typography */}
+          {/* Name - Large Typography with pop-up effect */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            initial={{ opacity: 0, scale: 0.8, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ 
+              duration: 0.8, 
+              delay: 0.2,
+              type: "spring",
+              stiffness: 100,
+              damping: 15
+            }}
             className="mb-6"
           >
-            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none">
+            <motion.h1 
+              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
               <HoverText text="CHANDRASHEKHAR" className="text-gradient text-7xl" />
-            </h1>
-            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none">
+            </motion.h1>
+            <motion.h1 
+              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
               <HoverText text="KAWADIMATTI" className="text-gradient" />
-            </h1>
+            </motion.h1>
           </motion.div>
 
-          {/* Tagline */}
+          {/* Tagline with bounce effect */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ 
+              duration: 0.6, 
+              delay: 0.7,
+              type: "spring",
+              stiffness: 200,
+              damping: 10
+            }}
             className="text-primary font-mono text-lg md:text-xl mb-8"
           >
             First-Year CST Student 🎓
           </motion.p>
 
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
-          >
-            <Button
-              size="lg"
-              className="rounded-full px-8 gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
-            >
-              <a href="#projects" className="flex items-center gap-2">
-                View Work <ArrowRight className="h-4 w-4" />
-              </a>
-            </Button>
-            <Button size="lg" variant="outline" className="rounded-full px-8" asChild>
-              <a href="#contact">Contact Me</a>
-            </Button>
-          </motion.div>
-
-          {/* Social Icons */}
+          {/* CTA Buttons with staggered pop-up */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            transition={{ duration: 0.5, delay: 0.9 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 30, scale: 0.8 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ 
+                duration: 0.5, 
+                delay: 1.0,
+                type: "spring",
+                stiffness: 150
+              }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Button
+                size="lg"
+                className="rounded-full px-8 gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
+              >
+                <a href="#projects" className="flex items-center gap-2">
+                  View Work <ArrowRight className="h-4 w-4" />
+                </a>
+              </Button>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 30, scale: 0.8 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ 
+                duration: 0.5, 
+                delay: 1.15,
+                type: "spring",
+                stiffness: 150
+              }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Button size="lg" variant="outline" className="rounded-full px-8" asChild>
+                <a href="#contact">Contact Me</a>
+              </Button>
+            </motion.div>
+          </motion.div>
+
+          {/* Social Icons with staggered pop-up */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 1.3 }}
             className="flex gap-6 justify-center"
           >
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
-              <Linkedin className="h-5 w-5" />
-            </a>
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
-              <Github className="h-5 w-5" />
-            </a>
-            <a
-              href="mailto:your@email.com"
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
-              <Mail className="h-5 w-5" />
-            </a>
+            {[
+              { href: "https://linkedin.com", Icon: Linkedin },
+              { href: "https://github.com", Icon: Github },
+              { href: "mailto:your@email.com", Icon: Mail },
+            ].map((social, index) => (
+              <motion.a
+                key={index}
+                href={social.href}
+                target={social.href.startsWith("mailto") ? undefined : "_blank"}
+                rel={social.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
+                className="text-muted-foreground hover:text-primary transition-colors duration-200"
+                initial={{ opacity: 0, y: 20, scale: 0 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ 
+                  duration: 0.4, 
+                  delay: 1.4 + index * 0.1,
+                  type: "spring",
+                  stiffness: 200
+                }}
+                whileHover={{ scale: 1.3, rotate: 5 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <social.Icon className="h-5 w-5" />
+              </motion.a>
+            ))}
           </motion.div>
         </div>
       </div>
