@@ -13,7 +13,7 @@ const educationData = [
   {
     year: "2022 - 2024",
     score: "XX.X%",
-    title: "Intermediate (11th & 12th)",
+    title: "Intermediate (12th)",
     institution: "Your School Name",
     location: "Your State",
     icon: School,
