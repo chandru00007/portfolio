@@ -5,23 +5,16 @@ import { Button } from "@/components/ui/button";
 const certifications = [
   {
     year: "2024",
-    title: "Web Development Fundamentals",
+    title: "Python Programming",
     issuer: "Online Platform",
-    description: "Mastering HTML, CSS, and JavaScript basics.",
+    description: "Comprehensive Python programming skills and best practices.",
     link: "#",
   },
   {
     year: "2024",
-    title: "Python for Beginners",
+    title: "Prompt Engineering",
     issuer: "Online Platform",
-    description: "Learning Python programming from scratch.",
-    link: "#",
-  },
-  {
-    year: "2024",
-    title: "Introduction to AI",
-    issuer: "Online Platform",
-    description: "Understanding AI fundamentals and applications.",
+    description: "Mastering AI prompt design and optimization techniques.",
     link: "#",
   },
 ];
