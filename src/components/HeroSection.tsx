@@ -52,7 +52,10 @@ const HoverText = ({ text, className }: { text: string; className?: string }) =>
       {text.split("").map((letter, index) => (
         <span
           key={index}
-          className="inline-block transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)] cursor-default hover:text-primary hover:[-webkit-text-fill-color:hsl(48_96%_53%)] hover:drop-shadow-[0_0_12px_hsl(48_96%_53%/0.6)]"
+          className="inline-block cursor-default hover:text-primary hover:[-webkit-text-fill-color:hsl(48_96%_53%)] hover:drop-shadow-[0_0_12px_hsl(48_96%_53%/0.6)]"
+          style={{
+            transition: "all 2s cubic-bezier(0.25, 0.1, 0.25, 1)"
+          }}
         >
           {letter}
         </span>
