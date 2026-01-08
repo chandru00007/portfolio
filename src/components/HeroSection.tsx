@@ -9,7 +9,7 @@ const HeroSection = () => {
       <img 
         src={heroBg}
         alt=""
-        className="absolute inset-0 w-full h-full object-cover object-top opacity-20 grayscale brightness-50 pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover object-top opacity-40 grayscale brightness-50 pointer-events-none"
       />
       {/* Background Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background z-[1]" />
