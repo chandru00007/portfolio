@@ -21,6 +21,7 @@ const projects = [
       text: "group-hover:text-rose-400",
       badge: "bg-rose-500/20 text-rose-300 border-rose-500/30",
       tech: "hover:bg-rose-500/20 hover:text-rose-300",
+      glow: "bg-rose-500/40",
     },
   },
   {
@@ -40,6 +41,7 @@ const projects = [
       text: "group-hover:text-emerald-400",
       badge: "bg-emerald-500/20 text-emerald-300 border-emerald-500/30",
       tech: "hover:bg-emerald-500/20 hover:text-emerald-300",
+      glow: "bg-emerald-500/40",
     },
   },
   {
@@ -59,6 +61,7 @@ const projects = [
       text: "group-hover:text-violet-400",
       badge: "bg-violet-500/20 text-violet-300 border-violet-500/30",
       tech: "hover:bg-violet-500/20 hover:text-violet-300",
+      glow: "bg-violet-500/40",
     },
   },
 ];
@@ -97,8 +100,10 @@ const ProjectsSection = () => {
                 stiffness: 100
               }}
               viewport={{ once: true }}
-              className={`group relative p-6 rounded-2xl border cursor-pointer transition-all duration-300 bg-gradient-to-br ${project.color.gradient} ${project.color.border} ${project.color.shadow}`}
+              className={`group relative p-6 rounded-2xl border cursor-pointer transition-all duration-300 bg-gradient-to-br ${project.color.gradient} ${project.color.border} ${project.color.shadow} overflow-hidden`}
             >
+              {/* Glow background effect */}
+              <div className={`absolute inset-0 ${project.color.glow} opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-500 -z-10`} />
               {/* Type Badge */}
               <div className="mb-4 flex flex-wrap gap-2">
                 {project.event && (
