@@ -28,7 +28,7 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-4 left-1/2 -translate-x-1/2 z-50"
+      className="fixed top-4 left-0 right-0 z-50 flex justify-center"
     >
       <div
         className={`flex items-center gap-1 px-2 py-2 rounded-full border border-border/50 backdrop-blur-md transition-all duration-300 ${
