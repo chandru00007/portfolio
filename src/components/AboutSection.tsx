@@ -29,11 +29,11 @@ const AboutSection = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="aspect-[9/16] max-w-sm mx-auto rounded-2xl flex items-center justify-center overflow-hidden">
+            <div className="aspect-[9/16] max-w-sm mx-auto rounded-3xl flex items-center justify-center overflow-hidden shadow-[0_0_40px_rgba(234,179,8,0.15)] hover:shadow-[0_0_60px_rgba(234,179,8,0.25)] transition-shadow duration-500">
               <img 
                 src={aboutPhoto} 
                 alt="Chandrashekhar Kawadimatti" 
-                className="w-full h-full object-contain object-center"
+                className="w-full h-full object-contain object-center rounded-3xl"
               />
             </div>
           </motion.div>
