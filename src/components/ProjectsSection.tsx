@@ -59,14 +59,24 @@ const ProjectsSection = () => {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              whileHover={{ 
+                y: -8, 
+                scale: 1.02,
+                boxShadow: "0 20px 40px -15px hsl(var(--primary) / 0.2)"
+              }}
+              transition={{ 
+                duration: 0.5, 
+                delay: index * 0.15,
+                type: "spring",
+                stiffness: 100
+              }}
               viewport={{ once: true }}
-              className={`group p-6 rounded-2xl border transition-all duration-300 hover:border-primary/50 ${
+              className={`group p-6 rounded-2xl border cursor-pointer transition-all duration-300 ${
                 project.highlight 
-                  ? "bg-card border-primary/30" 
-                  : "bg-card/50 border-border"
+                  ? "bg-gradient-to-br from-card to-card/80 border-primary/30 shadow-lg shadow-primary/5" 
+                  : "bg-card/50 border-border hover:border-primary/50"
               }`}
             >
               {/* Type Badge */}
@@ -86,9 +96,13 @@ const ProjectsSection = () => {
               </div>
 
               {/* Title & Description */}
-              <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
+              <motion.h3 
+                className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors"
+                whileHover={{ x: 4 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 {project.title}
-              </h3>
+              </motion.h3>
               <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
                 {project.description}
               </p>
@@ -96,12 +110,17 @@ const ProjectsSection = () => {
               {/* Tech Stack */}
               <div className="flex flex-wrap gap-2 mb-6">
                 {project.tech.map((tech, techIndex) => (
-                  <span
+                  <motion.span
                     key={techIndex}
-                    className="text-xs bg-secondary px-3 py-1 rounded-full text-muted-foreground"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    transition={{ delay: index * 0.1 + techIndex * 0.05 }}
+                    viewport={{ once: true }}
+                    className="text-xs bg-secondary px-3 py-1 rounded-full text-muted-foreground hover:bg-primary/10 hover:text-primary transition-colors cursor-default"
                   >
                     {tech}
-                  </span>
+                  </motion.span>
                 ))}
               </div>
 
