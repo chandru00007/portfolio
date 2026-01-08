@@ -9,6 +9,13 @@ const certifications = [
     issuer: "Online Platform",
     description: "Comprehensive Python programming skills and best practices.",
     link: "https://drive.google.com/file/d/1q0Z-EYkwCAr3had28edEgLXdb9M9aYfd/view?usp=drive_link",
+    color: {
+      gradient: "from-blue-500/10 via-cyan-500/5 to-transparent",
+      border: "border-blue-500/20 hover:border-blue-500/50",
+      glow: "bg-blue-500/40",
+      icon: "bg-blue-500/20 text-blue-400",
+      badge: "text-blue-400",
+    },
   },
   {
     year: "2024",
@@ -16,6 +23,13 @@ const certifications = [
     issuer: "Online Platform",
     description: "Mastering AI prompt design and optimization techniques.",
     link: "https://drive.google.com/file/d/1vDm4o7gzX_eDB0f7CSahITratapjDQ_O/view?usp=drive_link",
+    color: {
+      gradient: "from-violet-500/10 via-purple-500/5 to-transparent",
+      border: "border-violet-500/20 hover:border-violet-500/50",
+      glow: "bg-violet-500/40",
+      icon: "bg-violet-500/20 text-violet-400",
+      badge: "text-violet-400",
+    },
   },
 ];
 
@@ -43,13 +57,16 @@ const CertificationsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group p-6 rounded-2xl bg-card/50 border border-border hover:border-primary/50 transition-all duration-300"
+              className={`group relative p-6 rounded-2xl bg-gradient-to-br ${cert.color.gradient} border ${cert.color.border} transition-all duration-300 overflow-hidden`}
             >
+              {/* Glow background effect */}
+              <div className={`absolute inset-0 ${cert.color.glow} opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-500 -z-10`} />
+              
               <div className="flex items-start justify-between mb-4">
-                <div className="p-2 rounded-lg bg-primary/10">
-                  <Award className="h-5 w-5 text-primary" />
+                <div className={`p-2 rounded-lg ${cert.color.icon}`}>
+                  <Award className="h-5 w-5" />
                 </div>
-                <span className="text-sm text-primary font-medium">{cert.year}</span>
+                <span className={`text-sm font-medium ${cert.color.badge}`}>{cert.year}</span>
               </div>
 
               <h3 className="text-lg font-semibold mb-1 group-hover:text-primary transition-colors">
