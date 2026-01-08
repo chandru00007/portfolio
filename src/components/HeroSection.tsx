@@ -90,14 +90,14 @@ const HeroSection = () => {
     >
       {/* Cursor Following Yellow Glow */}
       <div
-        className="pointer-events-none absolute z-[3] transition-opacity duration-300"
+        className="pointer-events-none absolute z-[3] transition-opacity duration-500"
         style={{
           left: mousePosition.x,
           top: mousePosition.y,
           transform: "translate(-50%, -50%)",
-          width: "500px",
-          height: "500px",
-          background: "radial-gradient(circle, hsl(48 96% 53% / 0.25) 0%, hsl(48 96% 53% / 0.1) 35%, transparent 70%)",
+          width: "800px",
+          height: "800px",
+          background: "radial-gradient(circle, hsl(48 96% 53% / 0.12) 0%, hsl(48 96% 53% / 0.06) 25%, hsl(48 96% 53% / 0.02) 50%, transparent 70%)",
           opacity: isHovering ? 1 : 0,
           borderRadius: "50%",
         }}
