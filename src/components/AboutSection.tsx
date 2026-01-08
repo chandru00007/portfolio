@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { User, Download, MapPin, Clock } from "lucide-react";
+import { Download, MapPin, Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import aboutPhoto from "@/assets/about-photo.jpg";
 
 const AboutSection = () => {
   return (
@@ -29,7 +30,11 @@ const AboutSection = () => {
             className="relative"
           >
             <div className="aspect-[4/5] rounded-2xl bg-secondary border border-border flex items-center justify-center overflow-hidden">
-              <User className="w-32 h-32 text-muted-foreground/30" />
+              <img 
+                src={aboutPhoto} 
+                alt="Chandrashekhar Kawadimatti" 
+                className="w-full h-full object-cover object-top"
+              />
             </div>
           </motion.div>
 
