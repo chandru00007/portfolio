@@ -6,7 +6,6 @@ import {
   Cpu, 
   Sparkles, 
   Brain,
-  Monitor,
   MessageSquare
 } from "lucide-react";
 
@@ -40,11 +39,6 @@ const skills = [
     title: "Prompt Engineering",
     description: "Neural Networks Basics",
     icon: Brain,
-  },
-  {
-    title: "Operating Systems",
-    description: "Linux, Windows, OS Concepts",
-    icon: Monitor,
   },
   {
     title: "Soft Skills",
