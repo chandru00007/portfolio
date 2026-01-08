@@ -1,9 +1,17 @@
 import { ArrowRight, Linkedin, Github, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import heroBg from "@/assets/hero-bg.jpg";
+
 const HeroSection = () => {
   return <section id="home" className="min-h-screen flex items-center justify-center relative noise-bg overflow-hidden">
-      {/* Background Image Overlay */}
+      {/* Background Photo Silhouette */}
+      <img 
+        src={heroBg}
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover object-top opacity-20 grayscale brightness-50 pointer-events-none"
+      />
+      {/* Background Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background z-[1]" />
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
