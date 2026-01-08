@@ -92,7 +92,7 @@ const SkillsSection = () => {
           viewport={{ once: true }}
           className="text-center text-muted-foreground italic mt-12"
         >
-          "Learning & Earning More..."
+          "Learning More..."
         </motion.p>
       </div>
     </section>
