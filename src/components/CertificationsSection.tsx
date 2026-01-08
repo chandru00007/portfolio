@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const certifications = [
   {
-    year: "2024",
+    year: "2025",
     title: "Python Programming",
     issuer: "Online Platform",
     description: "Comprehensive Python programming skills and best practices.",
@@ -18,7 +18,7 @@ const certifications = [
     },
   },
   {
-    year: "2024",
+    year: "2025",
     title: "Prompt Engineering",
     issuer: "Online Platform",
     description: "Mastering AI prompt design and optimization techniques.",
