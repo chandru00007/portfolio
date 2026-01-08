@@ -8,14 +8,14 @@ const certifications = [
     title: "Python Programming",
     issuer: "Online Platform",
     description: "Comprehensive Python programming skills and best practices.",
-    link: "#",
+    link: "https://drive.google.com/file/d/1q0Z-EYkwCAr3had28edEgLXdb9M9aYfd/view?usp=drive_link",
   },
   {
     year: "2024",
     title: "Prompt Engineering",
     issuer: "Online Platform",
     description: "Mastering AI prompt design and optimization techniques.",
-    link: "#",
+    link: "https://drive.google.com/file/d/1vDm4o7gzX_eDB0f7CSahITratapjDQ_O/view?usp=drive_link",
   },
 ];
 
