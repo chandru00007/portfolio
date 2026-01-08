@@ -18,6 +18,7 @@ const skills = [
     hoverBorder: "hover:border-blue-400/50",
     hoverShadow: "hover:shadow-[0_0_20px_-5px_rgb(59,130,246,0.4)]",
     iconColor: "group-hover:text-blue-400",
+    glowColor: "bg-blue-500/30",
   },
   {
     title: "Python Basics",
@@ -27,6 +28,7 @@ const skills = [
     hoverBorder: "hover:border-yellow-400/50",
     hoverShadow: "hover:shadow-[0_0_20px_-5px_rgb(234,179,8,0.4)]",
     iconColor: "group-hover:text-yellow-400",
+    glowColor: "bg-yellow-500/30",
   },
   {
     title: "C/C++",
@@ -36,6 +38,7 @@ const skills = [
     hoverBorder: "hover:border-indigo-400/50",
     hoverShadow: "hover:shadow-[0_0_20px_-5px_rgb(99,102,241,0.4)]",
     iconColor: "group-hover:text-indigo-400",
+    glowColor: "bg-indigo-500/30",
   },
   {
     title: "Database",
@@ -45,6 +48,7 @@ const skills = [
     hoverBorder: "hover:border-emerald-400/50",
     hoverShadow: "hover:shadow-[0_0_20px_-5px_rgb(16,185,129,0.4)]",
     iconColor: "group-hover:text-emerald-400",
+    glowColor: "bg-emerald-500/30",
   },
   {
     title: "AI Tools",
@@ -54,6 +58,7 @@ const skills = [
     hoverBorder: "hover:border-purple-400/50",
     hoverShadow: "hover:shadow-[0_0_20px_-5px_rgb(168,85,247,0.4)]",
     iconColor: "group-hover:text-purple-400",
+    glowColor: "bg-purple-500/30",
   },
   {
     title: "Prompt Engineering",
@@ -63,6 +68,7 @@ const skills = [
     hoverBorder: "hover:border-violet-400/50",
     hoverShadow: "hover:shadow-[0_0_20px_-5px_rgb(139,92,246,0.4)]",
     iconColor: "group-hover:text-violet-400",
+    glowColor: "bg-violet-500/30",
   },
   {
     title: "Soft Skills",
@@ -72,6 +78,7 @@ const skills = [
     hoverBorder: "hover:border-orange-400/50",
     hoverShadow: "hover:shadow-[0_0_20px_-5px_rgb(249,115,22,0.4)]",
     iconColor: "group-hover:text-orange-400",
+    glowColor: "bg-orange-500/30",
   },
 ];
 
@@ -132,8 +139,11 @@ const SkillsSection = () => {
                 y: -8, 
                 scale: 1.1,
               }}
-              className={`group p-4 rounded-xl bg-card/50 border border-border ${skill.hoverBorder} ${skill.hoverBg} cursor-pointer transition-all duration-300 flex flex-col items-center text-center ${skill.hoverShadow}`}
+              className={`group relative p-4 rounded-xl bg-card/50 border border-border ${skill.hoverBorder} ${skill.hoverBg} cursor-pointer transition-all duration-300 flex flex-col items-center text-center ${skill.hoverShadow}`}
             >
+              {/* Glow background effect */}
+              <div className={`absolute inset-0 rounded-xl ${skill.glowColor} opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500 -z-10`} />
+              
               <motion.div 
                 className={`p-3 rounded-lg bg-gradient-to-br ${skill.color} opacity-80 group-hover:opacity-100 transition-all mb-2`}
                 whileHover={{ rotate: [0, -10, 10, -5, 0] }}
