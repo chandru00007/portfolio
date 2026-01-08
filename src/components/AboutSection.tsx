@@ -29,11 +29,11 @@ const AboutSection = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="aspect-[3/4] rounded-2xl bg-secondary border border-border flex items-center justify-center overflow-hidden">
+            <div className="aspect-[9/16] max-w-sm mx-auto rounded-2xl bg-secondary border border-border flex items-center justify-center overflow-hidden">
               <img 
                 src={aboutPhoto} 
                 alt="Chandrashekhar Kawadimatti" 
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain object-center"
               />
             </div>
           </motion.div>
