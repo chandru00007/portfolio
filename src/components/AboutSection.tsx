@@ -61,7 +61,7 @@ const AboutSection = () => {
 
             {/* Badges */}
             <div className="flex flex-wrap gap-2 pt-2">
-              <Badge variant="secondary" className="rounded-full px-4 py-1">CSE Student</Badge>
+              <Badge variant="secondary" className="rounded-full px-4 py-1">CST Student</Badge>
               <Badge variant="secondary" className="rounded-full px-4 py-1">Vibe Coder</Badge>
               <Badge variant="secondary" className="rounded-full px-4 py-1">Web Developer</Badge>
               <Badge variant="secondary" className="rounded-full px-4 py-1">AI Explorer</Badge>
