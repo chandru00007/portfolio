@@ -14,6 +14,14 @@ const projects = [
     github: "https://github.com/chandru00007/Life-connect",
     live: null,
     highlight: true,
+    color: {
+      gradient: "from-rose-500/20 to-pink-500/10",
+      border: "border-rose-500/30 hover:border-rose-400",
+      shadow: "hover:shadow-[0_0_30px_-5px_rgb(244,63,94,0.4)]",
+      text: "group-hover:text-rose-400",
+      badge: "bg-rose-500/20 text-rose-300 border-rose-500/30",
+      tech: "hover:bg-rose-500/20 hover:text-rose-300",
+    },
   },
   {
     title: "DocQue",
@@ -25,6 +33,14 @@ const projects = [
     github: "https://github.com/chandru00007/doc-queue-bangalore",
     live: null,
     highlight: false,
+    color: {
+      gradient: "from-emerald-500/20 to-teal-500/10",
+      border: "border-emerald-500/30 hover:border-emerald-400",
+      shadow: "hover:shadow-[0_0_30px_-5px_rgb(16,185,129,0.4)]",
+      text: "group-hover:text-emerald-400",
+      badge: "bg-emerald-500/20 text-emerald-300 border-emerald-500/30",
+      tech: "hover:bg-emerald-500/20 hover:text-emerald-300",
+    },
   },
   {
     title: "Vyavsta AI",
@@ -36,6 +52,14 @@ const projects = [
     github: "https://github.com/chandru00007/vyavastha-ai",
     live: "https://vyavasthaai.lovable.app/",
     highlight: true,
+    color: {
+      gradient: "from-violet-500/20 to-purple-500/10",
+      border: "border-violet-500/30 hover:border-violet-400",
+      shadow: "hover:shadow-[0_0_30px_-5px_rgb(139,92,246,0.4)]",
+      text: "group-hover:text-violet-400",
+      badge: "bg-violet-500/20 text-violet-300 border-violet-500/30",
+      tech: "hover:bg-violet-500/20 hover:text-violet-300",
+    },
   },
 ];
 
@@ -73,22 +97,18 @@ const ProjectsSection = () => {
                 stiffness: 100
               }}
               viewport={{ once: true }}
-              className={`group relative p-6 rounded-2xl border cursor-pointer transition-all duration-300 ${
-                project.highlight 
-                  ? "bg-gradient-to-br from-card to-card/80 border-primary/30 shadow-lg shadow-primary/5 hover:border-primary hover:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.4)]" 
-                  : "bg-card/50 border-border hover:border-primary/50"
-              }`}
+              className={`group relative p-6 rounded-2xl border cursor-pointer transition-all duration-300 bg-gradient-to-br ${project.color.gradient} ${project.color.border} ${project.color.shadow}`}
             >
               {/* Type Badge */}
               <div className="mb-4 flex flex-wrap gap-2">
                 {project.event && (
-                  <Badge className="bg-accent/50 text-accent-foreground border-accent rounded-full">
+                  <Badge className={`${project.color.badge} rounded-full`}>
                     <Trophy className="h-3 w-3 mr-1" />
                     {project.event}
                   </Badge>
                 )}
                 {project.highlight && !project.event && (
-                  <Badge className="bg-primary/10 text-primary border-primary/20 rounded-full">
+                  <Badge className={`${project.color.badge} rounded-full`}>
                     <Sparkles className="h-3 w-3 mr-1" />
                     Featured
                   </Badge>
@@ -97,7 +117,7 @@ const ProjectsSection = () => {
 
               {/* Title & Description */}
               <motion.h3 
-                className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors"
+                className={`text-xl font-semibold mb-3 ${project.color.text} transition-colors`}
                 whileHover={{ x: 4 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
@@ -117,7 +137,7 @@ const ProjectsSection = () => {
                     whileHover={{ scale: 1.1, y: -2 }}
                     transition={{ delay: index * 0.1 + techIndex * 0.05 }}
                     viewport={{ once: true }}
-                    className="text-xs bg-secondary px-3 py-1 rounded-full text-muted-foreground hover:bg-primary/10 hover:text-primary transition-colors cursor-default"
+                    className={`text-xs bg-secondary px-3 py-1 rounded-full text-muted-foreground ${project.color.tech} transition-colors cursor-default`}
                   >
                     {tech}
                   </motion.span>
