@@ -69,24 +69,23 @@ const SkillsSection = () => {
           <p className="text-muted-foreground">Tools and technologies I'm learning to build with.</p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-3">
           {skills.map((skill, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              whileHover={{ y: -4, scale: 1.05 }}
+              transition={{ duration: 0.3, delay: index * 0.03 }}
               viewport={{ once: true }}
-              className="group p-5 rounded-xl bg-card/50 border border-border hover:border-primary/50 transition-all duration-300"
+              className="group p-4 rounded-xl bg-card/50 border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 flex flex-col items-center text-center"
             >
-              <div className="flex items-center gap-4">
-                <div className="p-2 rounded-lg bg-secondary group-hover:bg-primary/10 transition-colors">
-                  <skill.icon className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
-                </div>
-                <h3 className="font-semibold group-hover:text-primary transition-colors">
-                  {skill.title}
-                </h3>
+              <div className="p-3 rounded-lg bg-secondary group-hover:bg-primary/10 transition-colors mb-2">
+                <skill.icon className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
               </div>
+              <h3 className="text-sm font-medium group-hover:text-primary transition-colors">
+                {skill.title}
+              </h3>
             </motion.div>
           ))}
         </div>
