@@ -11,8 +11,7 @@ const HoverText = ({ text, className }: { text: string; className?: string }) =>
       {text.split("").map((letter, index) => (
         <span
           key={index}
-          className="inline-block transition-all duration-150 cursor-default hover:text-primary hover:[-webkit-text-fill-color:hsl(48_96%_53%)] hover:drop-shadow-[0_0_8px_hsl(48_96%_53%/0.8)]"
-          style={{ transitionDelay: `${index * 10}ms` }}
+          className="inline-block transition-all duration-500 ease-out cursor-default hover:text-primary hover:[-webkit-text-fill-color:hsl(48_96%_53%)] hover:drop-shadow-[0_0_8px_hsl(48_96%_53%/0.8)]"
         >
           {letter}
         </span>
@@ -64,7 +63,7 @@ const HeroSection = () => {
       <img
         src={heroBg}
         alt=""
-        className="absolute inset-0 w-full h-full object-cover object-center opacity-70 grayscale brightness-90 pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover object-center opacity-80 grayscale-[50%] brightness-100 pointer-events-none"
       />
       {/* Background Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background z-[1]" />
