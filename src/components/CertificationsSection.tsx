@@ -49,7 +49,7 @@ const CertificationsSection = () => {
           <p className="text-muted-foreground">Validating skills through official credentials.</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mx-auto max-w-4xl grid sm:grid-cols-2 gap-6">
           {certifications.map((cert, index) => (
             <motion.div
               key={index}
