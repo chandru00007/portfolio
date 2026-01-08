@@ -29,12 +29,12 @@ const projects = [
   {
     title: "Vyavsta AI",
     description:
-      "An AI financial manager for small retail owners. Analyzes daily business operations, provides health stats, and advises on areas to improve.",
-    tech: ["AI", "Analytics", "Finance"],
+      "An AI financial manager for small retail owners. Analyzes daily business operations, provides health stats, and advises on areas to improve. Fully vibe coded! ✨",
+    tech: ["AI", "Analytics", "Finance", "Vibe Coded"],
     type: "live",
     event: "Bengaluru AI Hack Day",
-    github: "https://github.com",
-    live: null,
+    github: "https://github.com/chandru00007/vyavastha-ai",
+    live: "https://vyavasthaai.lovable.app/",
     highlight: true,
   },
 ];
