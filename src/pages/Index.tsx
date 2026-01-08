@@ -87,6 +87,40 @@ const Index = () => {
           animate={floatAnimationAlt.animate}
           transition={{ ...floatAnimationAlt.transition, delay: 4 }}
         />
+        
+        {/* Purple/Blue orbs for variety */}
+        <motion.div 
+          className="absolute top-1/2 right-1/4 w-56 h-56 rounded-full blur-3xl"
+          style={{ backgroundColor: 'hsl(260 70% 50% / 0.06)' }}
+          animate={floatAnimationSlow.animate}
+          transition={{ ...floatAnimationSlow.transition, delay: 1.5 }}
+        />
+        <motion.div 
+          className="absolute top-[60%] -left-10 w-48 h-48 rounded-full blur-3xl"
+          style={{ backgroundColor: 'hsl(220 80% 55% / 0.05)' }}
+          animate={floatAnimation.animate}
+          transition={{ ...floatAnimation.transition, delay: 2.5 }}
+        />
+        <motion.div 
+          className="absolute top-[15%] right-1/3 w-40 h-40 rounded-full blur-3xl"
+          style={{ backgroundColor: 'hsl(280 60% 45% / 0.05)' }}
+          animate={floatAnimationAlt.animate}
+          transition={{ ...floatAnimationAlt.transition, delay: 3.5 }}
+        />
+        
+        {/* Teal/Cyan accent orbs */}
+        <motion.div 
+          className="absolute bottom-[40%] left-[10%] w-52 h-52 rounded-full blur-3xl"
+          style={{ backgroundColor: 'hsl(180 60% 45% / 0.04)' }}
+          animate={floatAnimationSlow.animate}
+          transition={{ ...floatAnimationSlow.transition, delay: 0.5 }}
+        />
+        <motion.div 
+          className="absolute top-[75%] right-[15%] w-44 h-44 rounded-full blur-3xl"
+          style={{ backgroundColor: 'hsl(200 70% 50% / 0.05)' }}
+          animate={floatAnimation.animate}
+          transition={{ ...floatAnimation.transition, delay: 5 }}
+        />
         {/* Subtle grid pattern overlay */}
         <div 
           className="absolute inset-0 opacity-[0.02]"
