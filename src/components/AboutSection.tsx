@@ -76,9 +76,11 @@ const AboutSection = () => {
             </div>
 
             {/* Download CV Button */}
-            <Button className="rounded-full gap-2 mt-4">
-              <Download className="h-4 w-4" />
-              Download CV
+            <Button asChild className="rounded-full gap-2 mt-4">
+              <a href="/chandrashekhar_kawadimatti.docx" download>
+                <Download className="h-4 w-4" />
+                Download CV
+              </a>
             </Button>
 
             {/* Stats Cards */}
