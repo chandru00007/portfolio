@@ -171,9 +171,9 @@ const HeroSection = () => {
             className="flex gap-6 justify-center"
           >
             {[
-              { href: "https://linkedin.com", Icon: Linkedin },
-              { href: "https://github.com", Icon: Github },
-              { href: "mailto:your@email.com", Icon: Mail },
+              { href: "https://www.linkedin.com/in/chandrashekhar-kawadimatti-b086b3385/", Icon: Linkedin },
+              { href: "https://github.com/chandru00007", Icon: Github },
+              { href: "mailto:chandrukavadimatti07@gmail.com", Icon: Mail },
             ].map((social, index) => (
               <motion.a
                 key={index}
