@@ -14,6 +14,8 @@ const floatAnimation = {
   animate: {
     y: [0, -20, 0],
     x: [0, 10, 0],
+    opacity: [0.5, 1, 0.5],
+    scale: [1, 1.1, 1],
   },
   transition: {
     duration: 8,
@@ -26,6 +28,8 @@ const floatAnimationAlt = {
   animate: {
     y: [0, 15, 0],
     x: [0, -15, 0],
+    opacity: [0.6, 1, 0.6],
+    scale: [1, 1.15, 1],
   },
   transition: {
     duration: 10,
@@ -38,6 +42,8 @@ const floatAnimationSlow = {
   animate: {
     y: [0, -25, 0],
     x: [0, -10, 0],
+    opacity: [0.4, 1, 0.4],
+    scale: [1, 1.2, 1],
   },
   transition: {
     duration: 12,
@@ -53,31 +59,31 @@ const Index = () => {
       <div className="fixed inset-0 pointer-events-none z-0">
         {/* Top-left gradient orb */}
         <motion.div 
-          className="absolute -top-40 -left-40 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
+          className="absolute -top-40 -left-40 w-96 h-96 bg-primary/8 rounded-full blur-3xl"
           animate={floatAnimation.animate}
           transition={floatAnimation.transition}
         />
         {/* Top-right gradient orb */}
         <motion.div 
-          className="absolute -top-20 -right-20 w-80 h-80 bg-primary/3 rounded-full blur-3xl"
+          className="absolute -top-20 -right-20 w-80 h-80 bg-primary/6 rounded-full blur-3xl"
           animate={floatAnimationAlt.animate}
           transition={{ ...floatAnimationAlt.transition, delay: 1 }}
         />
         {/* Center-left subtle glow */}
         <motion.div 
-          className="absolute top-1/3 -left-20 w-64 h-64 bg-primary/4 rounded-full blur-3xl"
+          className="absolute top-1/3 -left-20 w-64 h-64 bg-primary/7 rounded-full blur-3xl"
           animate={floatAnimationSlow.animate}
           transition={{ ...floatAnimationSlow.transition, delay: 2 }}
         />
         {/* Bottom-right gradient orb */}
         <motion.div 
-          className="absolute bottom-1/4 -right-32 w-72 h-72 bg-primary/5 rounded-full blur-3xl"
+          className="absolute bottom-1/4 -right-32 w-72 h-72 bg-primary/8 rounded-full blur-3xl"
           animate={floatAnimation.animate}
           transition={{ ...floatAnimation.transition, delay: 3 }}
         />
         {/* Bottom-left accent */}
         <motion.div 
-          className="absolute -bottom-20 left-1/4 w-80 h-80 bg-primary/3 rounded-full blur-3xl"
+          className="absolute -bottom-20 left-1/4 w-80 h-80 bg-primary/6 rounded-full blur-3xl"
           animate={floatAnimationAlt.animate}
           transition={{ ...floatAnimationAlt.transition, delay: 4 }}
         />
