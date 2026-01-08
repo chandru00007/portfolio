@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
-  return <section id="home" className="min-h-screen flex items-center justify-center relative noise-bg overflow-hidden">
+  return <section id="home" className="min-h-screen flex items-center justify-center relative animated-noise-bg overflow-hidden">
       {/* Background Photo Silhouette */}
       <img 
         src={heroBg}
