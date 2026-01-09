@@ -25,7 +25,7 @@ const achievements: Achievement[] = [
     project: "LifeConnect",
     projectLink: "https://github.com/chandru00007/Life-connect",
     year: "2025",
-    highlight: "Won as a 1st-year student competing against seniors from 4 campuses",
+    highlight: "Built an AI-powered solution that stood out among participants from 4 campuses",
     mentor: {
       name: "Srivant Varanasi",
       title: "CEO @ Surviant | Co-Founder @ Riverloom & Propelix"
