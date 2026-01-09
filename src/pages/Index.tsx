@@ -5,6 +5,7 @@ import TechMarquee from "@/components/TechMarquee";
 import AboutSection from "@/components/AboutSection";
 import EducationTimeline from "@/components/EducationTimeline";
 import ProjectsSection from "@/components/ProjectsSection";
+import HallOfFameSection from "@/components/HallOfFameSection";
 import SkillsSection from "@/components/SkillsSection";
 import CertificationsSection from "@/components/CertificationsSection";
 import ContactSection from "@/components/ContactSection";
@@ -40,6 +41,7 @@ const Index = () => {
         <AboutSection />
         <EducationTimeline />
         <ProjectsSection />
+        <HallOfFameSection />
         <SkillsSection />
         <CertificationsSection />
         <ContactSection />
