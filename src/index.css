@@ -192,4 +192,88 @@
     z-index: 2;
     animation: noise-animation 0.15s steps(3) infinite;
   }
+
+  /* Hall of Fame Effects */
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(43 96% 56%) 0%, hsl(27 95% 60%) 50%, hsl(43 96% 70%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .trophy-glow {
+    box-shadow: 
+      0 0 20px hsl(43 96% 56% / 0.4),
+      0 0 40px hsl(43 96% 56% / 0.2),
+      0 0 60px hsl(27 95% 60% / 0.1);
+    animation: trophy-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes trophy-pulse {
+    0%, 100% {
+      box-shadow: 
+        0 0 20px hsl(43 96% 56% / 0.4),
+        0 0 40px hsl(43 96% 56% / 0.2),
+        0 0 60px hsl(27 95% 60% / 0.1);
+    }
+    50% {
+      box-shadow: 
+        0 0 30px hsl(43 96% 56% / 0.6),
+        0 0 60px hsl(43 96% 56% / 0.3),
+        0 0 90px hsl(27 95% 60% / 0.2);
+    }
+  }
+
+  @keyframes achievement-pulse {
+    0%, 100% {
+      opacity: 0.4;
+      filter: blur(20px);
+    }
+    50% {
+      opacity: 0.7;
+      filter: blur(30px);
+    }
+  }
+
+  .achievement-pulse {
+    animation: achievement-pulse 3s ease-in-out infinite;
+  }
+
+  .shimmer-effect {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(43 96% 56% / 0.1) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .badge-shimmer {
+    background-size: 200% auto;
+    animation: badge-shine 3s linear infinite;
+  }
+
+  @keyframes badge-shine {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  .bg-gradient-radial {
+    background: radial-gradient(circle, var(--tw-gradient-stops));
+  }
 }
