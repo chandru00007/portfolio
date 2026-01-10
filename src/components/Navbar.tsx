@@ -49,7 +49,7 @@ const Navbar = () => {
           ))}
           <div className="w-px h-6 bg-border mx-2" />
           <Button size="sm" variant="outline" className="rounded-full px-4" asChild>
-            <a href="/chandrashekhar_kawadimatti.docx" download>Resume</a>
+            <a href="/chandrashekhar_kawadimatti.pdf" download>Resume</a>
           </Button>
         </div>
 
@@ -83,7 +83,7 @@ const Navbar = () => {
                 </a>
               ))}
               <Button size="sm" variant="outline" className="rounded-full mt-2" asChild>
-                <a href="/chandrashekhar_kawadimatti.docx" download>Resume</a>
+                <a href="/chandrashekhar_kawadimatti.pdf" download>Resume</a>
               </Button>
             </div>
           </motion.div>
