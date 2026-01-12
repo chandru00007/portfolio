@@ -14,7 +14,7 @@ import ChatBot from "@/components/ChatBot";
 
 const Index = () => {
   return (
-    <div className="dark min-h-screen bg-background text-foreground relative overflow-hidden">
+    <div className="dark min-h-screen bg-background text-foreground relative overflow-hidden overflow-x-hidden">
       {/* Background decorative elements */}
       <div className="fixed inset-0 pointer-events-none z-0">
         {/* Static primary color orbs */}
