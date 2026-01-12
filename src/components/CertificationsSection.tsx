@@ -6,9 +6,9 @@ const certifications = [
   {
     year: "2025",
     title: "Python Programming",
-    issuer: "Online Platform",
-    description: "Comprehensive Python programming skills and best practices.",
-    link: "https://drive.google.com/file/d/1q0Z-EYkwCAr3had28edEgLXdb9M9aYfd/view?usp=drive_link",
+    issuer: "MyCaptain",
+    description: "Competency in Python Basics, Data Analysis, Web Development with Django/Flask, and Automation.",
+    link: "/certificates/python-certificate.pdf",
     color: {
       gradient: "from-blue-500/10 via-cyan-500/5 to-transparent",
       border: "border-blue-500/20 hover:border-blue-500/50",

@@ -77,7 +77,7 @@ const AboutSection = () => {
 
             {/* Download CV Button */}
             <Button asChild className="rounded-full gap-2 mt-4">
-              <a href="/chandrashekhar_kawadimatti.docx" download>
+              <a href="/chandrashekhar_kawadimatti.pdf" download>
                 <Download className="h-4 w-4" />
                 Download CV
               </a>
