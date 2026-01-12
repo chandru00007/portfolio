@@ -99,7 +99,7 @@ const SkillsSection = () => {
         </motion.div>
 
         <motion.div 
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4 max-w-4xl mx-auto"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 max-w-4xl mx-auto"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
