@@ -11,6 +11,7 @@ import CertificationsSection from "@/components/CertificationsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import ChatBot from "@/components/ChatBot";
+import SectionDivider from "@/components/SectionDivider";
 
 const Index = () => {
   return (
@@ -39,11 +40,17 @@ const Index = () => {
         <HeroSection />
         <TechMarquee />
         <AboutSection />
+        <SectionDivider variant="line" />
         <EducationTimeline />
+        <SectionDivider variant="dots" />
         <ProjectsSection />
+        <SectionDivider variant="line" />
         <HallOfFameSection />
+        <SectionDivider variant="dots" />
         <SkillsSection />
+        <SectionDivider variant="line" />
         <CertificationsSection />
+        <SectionDivider variant="dots" />
         <ContactSection />
         <Footer />
         <ChatBot />
