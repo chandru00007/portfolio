@@ -106,7 +106,7 @@ const HallOfFameSection = () => {
               <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 via-yellow-400 to-orange-500 rounded-2xl opacity-40 group-hover:opacity-70 blur-xl transition-all duration-500 group-hover:blur-2xl achievement-pulse" />
               
               {/* Card */}
-              <div className="relative bg-gradient-to-br from-card via-card to-amber-950/20 rounded-2xl border border-amber-500/30 p-8 overflow-hidden">
+              <div className="relative bg-gradient-to-br from-card via-card to-amber-950/20 rounded-2xl border border-amber-500/30 p-4 sm:p-6 md:p-8 overflow-hidden">
                 {/* Shimmer effect */}
                 <div className="absolute inset-0 shimmer-effect opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
@@ -137,8 +137,8 @@ const HallOfFameSection = () => {
                 {/* Content */}
                 <div className="relative z-10">
                   {/* Header */}
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="flex items-center gap-4">
+                  <div className="flex flex-col sm:flex-row items-start justify-between mb-6 gap-4">
+                    <div className="flex items-center gap-3 sm:gap-4">
                       <motion.div
                         animate={{ 
                           rotate: [0, 5, -5, 0],
@@ -154,7 +154,7 @@ const HallOfFameSection = () => {
                         <Trophy className="w-8 h-8 text-amber-900" />
                       </motion.div>
                       <div>
-                        <h3 className="text-2xl font-bold text-foreground">{achievement.title}</h3>
+                        <h3 className="text-lg sm:text-2xl font-bold text-foreground">{achievement.title}</h3>
                         <p className="text-amber-400/80 text-sm">{achievement.level}</p>
                       </div>
                     </div>

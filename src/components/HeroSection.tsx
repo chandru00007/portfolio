@@ -25,7 +25,7 @@ const RoleAnimation = () => {
   }, []);
 
   return (
-    <div className="h-8 md:h-10 overflow-hidden relative">
+    <div className="h-6 sm:h-8 md:h-10 overflow-hidden relative">
       <AnimatePresence mode="wait">
         <motion.span
           key={currentIndex}
@@ -36,7 +36,7 @@ const RoleAnimation = () => {
             duration: 0.5, 
             ease: "easeInOut"
           }}
-          className="absolute inset-0 flex items-center justify-center text-primary font-mono text-lg md:text-xl"
+          className="absolute inset-0 flex items-center justify-center text-primary font-mono text-sm sm:text-lg md:text-xl"
         >
           {roles[currentIndex]}
         </motion.span>
@@ -128,15 +128,15 @@ const HeroSection = () => {
             className="mb-6"
           >
             <motion.h1 
-              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none"
+              className="text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-black tracking-tight leading-none"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <HoverText text="CHANDRASHEKHAR" className="text-gradient text-7xl" />
+              <HoverText text="CHANDRASHEKHAR" className="text-gradient" />
             </motion.h1>
             <motion.h1 
-              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none"
+              className="text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-black tracking-tight leading-none"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
@@ -166,7 +166,7 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.9 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-12 px-4"
           >
             <motion.div
               initial={{ opacity: 0, y: 30, scale: 0.8 }}
@@ -182,7 +182,7 @@ const HeroSection = () => {
             >
               <Button
                 size="lg"
-                className="rounded-full px-8 gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
+                className="rounded-full px-6 sm:px-8 gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
               >
                 <a href="#projects" className="flex items-center gap-2">
                   View Work <ArrowRight className="h-4 w-4" />
@@ -201,7 +201,7 @@ const HeroSection = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button size="lg" variant="outline" className="rounded-full px-8" asChild>
+              <Button size="lg" variant="outline" className="rounded-full px-6 sm:px-8" asChild>
                 <a href="#contact">Contact Me</a>
               </Button>
             </motion.div>
