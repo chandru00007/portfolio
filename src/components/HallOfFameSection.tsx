@@ -43,7 +43,7 @@ const achievements: Achievement[] = [
     level: "Open Source Program",
     year: "2026",
     highlight: "Contributed to real-world open source projects, collaborating with maintainers and other developers worldwide",
-    linkedinPost: "https://www.linkedin.com/feed/update/urn:li:activity:7458762840477159426/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAF73LXgBZ-aGnoLSO8dno7FiUco17wbZGxU",
+    linkedinPostPending: true,
     icon: "github",
   },
   {
@@ -52,7 +52,7 @@ const achievements: Achievement[] = [
     level: "Competitive Coding Challenge",
     year: "2026",
     highlight: "Reached the finals of CodeQuest 2026 through problem-solving and consistent practice",
-    linkedinPostPending: true,
+    linkedinPost: "https://www.linkedin.com/feed/update/urn:li:activity:7458762840477159426/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAF73LXgBZ-aGnoLSO8dno7FiUco17wbZGxU",
     icon: "code",
   },
 ];
