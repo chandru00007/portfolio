@@ -17,13 +17,35 @@ const ContactSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const name = formData.name.trim();
+    const email = formData.email.trim();
+    const message = formData.message.trim();
+
+    if (!name || name.length > 100) {
+      toast({ title: "Invalid name", description: "Please enter a name up to 100 characters.", variant: "destructive" });
+      return;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email) || email.length > 254) {
+      toast({ title: "Invalid email", description: "Please enter a valid email address.", variant: "destructive" });
+      return;
+    }
+    if (!message || message.length > 2000) {
+      toast({ title: "Invalid message", description: "Message must be 1-2000 characters.", variant: "destructive" });
+      return;
+    }
+
     setIsSubmitting(true);
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    // Open the user's email client with a prefilled message to actually deliver it.
+    const subject = encodeURIComponent(`Portfolio contact from ${name}`);
+    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+    window.location.href = `mailto:chandrukavadimatti07@gmail.com?subject=${subject}&body=${body}`;
 
     toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon!",
+      title: "Opening your email app",
+      description: "Please hit send in your email client to deliver the message.",
     });
 
     setFormData({ name: "", email: "", message: "" });
